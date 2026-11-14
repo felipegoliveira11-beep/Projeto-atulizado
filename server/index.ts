@@ -16,6 +16,7 @@ async function startServer() {
       ? path.resolve(__dirname, "public")
       : path.resolve(__dirname, "..", "dist", "public");
 
+
   app.use(express.static(staticPath));
 
   // Handle client-side routing - serve index.html for all routes
@@ -24,10 +25,14 @@ async function startServer() {
   });
 
   const port = process.env.PORT || 3000;
+}
 
-  server.listen(port, () => {
+  /*server.listen(port, () => {
     console.log(`Server running on http://localhost:${port}/`);
   });
 }
 
-startServer().catch(console.error);
+startServer().catch(console.error);*/
+ 
+export default startServer;
+

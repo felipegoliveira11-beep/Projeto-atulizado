@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { type CarouselApi, Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
-import { ArrowLeft, Check, Mountain, Zap, Droplets, Users, Shield, Award, X } from "lucide-react";
+import { ArrowLeft, Check, Mountain, Zap, Droplets, Users, Shield, Award, X, MessageCircle, Phone } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, useLocation, useRoute } from "wouter";
 
@@ -17,7 +17,7 @@ const destinations = [
       "Campings confortáveis em meio à natureza",
     ],
     image: "/Galeria/img14.jpeg",
-    videoUrl: "https://www.youtube.com/embed/rh7La3DV1iI",
+    videoUrl: "https://www.youtube.com/embed/qTmj5X0swvg",
     galleryImages: [
       { src: "/Galeria/img01.jpeg", alt: "Trilha no Jalapão" },
       { src: "/Galeria/img05.jpeg", alt: "Fervedouro do Jalapão" },
@@ -30,8 +30,8 @@ const destinations = [
       { icon: Mountain, label: "Trilhas e mirantes" },
       { icon: Zap, label: "Aventura e emoção" },
       { icon: Users, label: "Guias experientes" },
-      { icon: Shield, label: "Segurança total" },
-      { icon: Award, label: "Experiência autêntica" },
+      { icon: Shield, label: "Explore com segurança" },
+      { icon: Award, label: "Cultura e Tradição" },
     ],
   },
   {
@@ -43,10 +43,10 @@ const destinations = [
       "Caminhadas por trilhas exclusivas",
       "Banhos em cachoeiras cristalinas",
       "Observação da fauna e flora do Cerrado",
-      "Vivência com comunidades locais",
+      "Vivência com comunidades locais",    
     ],
     image: "/Galeria/img57.jpeg",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    videoUrl: "https://www.youtube.com/embed/EQ-qGecUqVg",
     galleryImages: [
       { src: "/Galeria/img21.jpeg", alt: "Serra e cachoeira" },
       { src: "/Galeria/img22.jpeg", alt: "Trilha nas Serras Gerais" },
@@ -55,12 +55,12 @@ const destinations = [
       { src: "/Galeria/img57.jpeg", alt: "Vale das Serras Gerais" },
     ],
     features: [
-      { icon: Droplets, label: "Cachoeiras escondidas" },
-      { icon: Mountain, label: "Paisagens serranas" },
+      { icon: Droplets, label: "Cachoeiras paradisíacas" },
+      { icon: Mountain, label: "Serras imponentes" },
       { icon: Zap, label: "Experiência imersiva" },
-      { icon: Users, label: "Apoio de guias locais" },
-      { icon: Shield, label: "Roteiro planejado" },
-      { icon: Award, label: "Conexão com cultura regional" },
+      { icon: Users, label: "Guias experientes" },
+      { icon: Shield, label: "Explore com segurança" },
+      { icon: Award, label: "Experiências autênticas" },
     ],
   },
 ];
@@ -145,7 +145,7 @@ export default function Detalhes() {
                 src={destination?.videoUrl}
                 title={`Vídeo ${destination?.name}`}
                 frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
                 className="w-full h-full"
               />
@@ -154,53 +154,64 @@ export default function Detalhes() {
         </div>
       </section>
 
-      <section className="py-20 md:py-32 bg-white/80">
-        <div className="container grid gap-12 lg:grid-cols-[1.2fr_0.8fr] items-center">
-          <div>
-            <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">{destination.name}</h1>
-            <p className="text-lg text-foreground/70 mb-8 leading-relaxed">
-              {destination.description}
-            </p>
+      {/* Presentation Section */}
+      <section className="py-20 md:py-24 bg-white/80">
+        <div className="container">
+          <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">{destination.name}</h1>
+          <p className="text-lg text-foreground/70 max-w-4xl leading-relaxed">
+            {destination.description}
+          </p>
+        </div>
+      </section>
 
-            <div className="grid gap-4 mb-10">
-              {destination.highlights.map((highlight, index) => (
-                <div key={index} className="flex items-start gap-3 p-4 rounded-2xl bg-primary/5 border border-primary/10">
-                  <Check className="w-5 h-5 text-primary mt-1" />
-                  <p className="text-foreground/80">{highlight}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {destination.features.map((feature, index) => {
-                const Icon = feature.icon;
-                return (
-                  <div key={index} className="flex items-center gap-3 p-4 rounded-2xl bg-background border border-border">
-                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                      <Icon className="w-5 h-5 text-primary" />
-                    </div>
-                    <span className="font-medium text-foreground">{feature.label}</span>
+      {/* Features Section */}
+      <section className="py-16 md:py-20 bg-white/80">
+        <div className="container">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {destination.features.map((feature, index) => {
+              const Icon = feature.icon;
+              return (
+                <div key={index} className="flex items-center gap-3 p-4 rounded-2xl bg-background border border-border">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <Icon className="w-5 h-5 text-primary" />
                   </div>
-                );
-              })}
-            </div>
+                  <span className="font-medium text-foreground">{feature.label}</span>
+                </div>
+              );
+            })}
           </div>
+        </div>
+      </section>
 
-          <div className="rounded-3xl overflow-hidden shadow-xl shadow-slate-200">
+      {/* Gallery Section */}
+      <section className="py-16 md:py-20 bg-background">
+        <div className="container">
+          <div className="mx-auto w-full max-w-md overflow-hidden rounded-3xl shadow-xl shadow-slate-200">
             <Carousel setApi={setCarouselApi} opts={{ loop: true, align: "start" }}>
-              <CarouselContent className="h-[420px]">
+              <CarouselContent className="h-[560px]">
                 {destination.galleryImages?.map((image) => (
-                  <CarouselItem key={image.src} className="h-[420px]">
-                    <img
-                      src={image.src}
-                      alt={image.alt}
-                      className="w-full h-full object-cover"
-                    />
+                  <CarouselItem key={image.src} className="h-[560px]">
+                    <img src={image.src} alt={image.alt} className="w-full h-full object-cover" />
                   </CarouselItem>
                 ))}
               </CarouselContent>
             </Carousel>
           </div>
+        </div>
+      </section>
+
+      {/* Closing Text Section */}
+      <section className="py-20 md:py-24 bg-white/80">
+        <div className="container max-w-4xl">
+          <p className="text-lg text-foreground/70 leading-relaxed mb-5">
+            No sudeste do Tocantins, as Serras Gerais formam um dos maiores conjuntos de serras do Brasil, reunindo diferentes paisagens e experiências em uma mesma expedição.
+          </p>
+          <p className="text-lg text-foreground/70 leading-relaxed mb-5">
+            Entre trilhas ao longo da expedição, podemos explorar lugares como o Cânion Encantado, Lagoa da Serra, Lagoa do Japonês, Rio Azuis, Complexo Águas Lindas, Cidade de Pedras, Morro da Cruz e diferentes cachoeiras, rios e trilhas da região.
+          </p>
+          <p className="text-lg text-foreground/70 leading-relaxed">
+            Quer conhecer o roteiro completo e entender qual experiência combina com você? Chame a gente no WhatsApp e venha descobrir as Serras Gerais com a gente.
+          </p>
         </div>
       </section>
 
@@ -255,7 +266,11 @@ export default function Detalhes() {
                 </div>
                 <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-green-100 hover:shadow-md transition-all">
                   <Check className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" strokeWidth={3} />
-                  <p className="text-foreground font-medium font-display">Seguro viagem</p>
+                  <p className="text-foreground font-medium font-display">Condutores credenciados</p>
+                </div>
+                <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-green-100 hover:shadow-md transition-all">
+                  <Check className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" strokeWidth={3} />
+                  <p className="text-foreground font-medium font-display">Experiência astronômica</p>
                 </div>
               </div>
             </div>
@@ -284,8 +299,37 @@ export default function Detalhes() {
                   <X className="w-5 h-5 text-red-600 mt-1 flex-shrink-0" strokeWidth={3} />
                   <p className="text-foreground font-medium font-display">Hospedagem pré e pós-retiro</p>
                 </div>
+                <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-red-100 hover:shadow-md transition-all">
+                  <X className="w-5 h-5 text-red-600 mt-1 flex-shrink-0" strokeWidth={3} />
+                  <p className="text-foreground font-medium font-display">Seguro viagem</p>
+                </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-20 md:py-24 bg-primary text-primary-foreground">
+        <div className="container text-center">
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Fale com a Raiz Viva</h2>
+          <p className="text-lg opacity-90 max-w-2xl mx-auto mb-8">
+            Consulte datas, valores e todos os detalhes da sua expedição.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+            <a
+              href="https://wa.me/5563992591113?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20a%20expedi%C3%A7%C3%A3o."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-md bg-white px-5 py-3 font-semibold text-primary transition hover:bg-white/90"
+            >
+              <MessageCircle className="w-5 h-5" />
+              WhatsApp
+            </a>
+            <a href="tel:+5563992591113" className="inline-flex items-center gap-2 rounded-md border border-white/50 px-5 py-3 font-semibold transition hover:bg-white/10">
+              <Phone className="w-5 h-5" />
+              +55 (63) 99259-1113
+            </a>
           </div>
         </div>
       </section>

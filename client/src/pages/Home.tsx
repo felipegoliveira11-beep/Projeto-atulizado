@@ -6,7 +6,7 @@ import { Link } from "wouter";
 
 /**
  * Raiz Viva Expedições - Página Inicial
- *
+      description: "Equipamento de ponta, protocolos rigorosos e atenção à segurança em todas as expedições.",
  * Design Philosophy: Modernismo Orgânico com Tipografia Assertiva
  * - Paleta personalizada: Verde oliva apagado (#797d42) e Off white (#F2EDE0)
  * - Tipografia em contraste: Art Nuvo (display) + Inter (body)
@@ -22,7 +22,7 @@ export default function Home() {
     { 
       id: 1,
       name: " JALAPÃO ",
-      description: "Explore os famosos fervedouros do Jalapão. Banhos em água cristalina, trilhas em paisagens deslumbrantes, cachoeiras de tirar o folego e além de tudo cercados por dunas de areia dourada.",
+      description: "O Jalapão é onde o Cerrado parece ter sido esculpido à mão. Dunas douradas, rios cristalinos, fervedouros de azul intenso e cachoeiras formam paisagens de beleza surpreendente. Entre trilhas, estradas de areia e noites estreladas, a expedição equilibra aventura e contemplação em um dos cenários mais marcantes do Cerrado.",
       image: "./Galeria/img14.jpeg",
       difficulty: "Fácil/Moderado",
       duration: "3-7 dias",
@@ -32,7 +32,7 @@ export default function Home() {
     {
       id: 2,
       name: "SERRAS GERAIS ",
-      description: "Explore as incríveis paisagens das Serras Gerais. Banhos em águas cristalinas, trilhas por cenários de tirar o fôlego, cachoeiras exuberantes e formações rochosas impressionantes em meio à imensidão preservada do Cerrado.",
+      description: "Nas Serras Gerais, o Cerrado preservado ganha formas impressionantes. Trilhas por paisagens selvagens levam a um cânion gigante, cachoeiras majestosas, rios de águas intensamente azuis e uma lagoa que parece ter sido pintada à mão. Um cenário grandioso, onde cada caminhada revela um novo motivo para continuar.",
       image: "./Galeria/img57.jpeg",
       difficulty: "Fácil/Moderado",
       duration: "3-7 dias",
@@ -63,12 +63,12 @@ export default function Home() {
     },
     {
       icon: Shield,
-      title: "Segurança Garantida",
-      description: "Equipamento de ponta, protocolos rigorosos e seguro de viagem incluído em todas as expedições.",
+      title: "Segurança",
+      description: "Cuidado, planejamento e responsabilidade para você viver a aventura com segurança.",
     },
     {
       icon: Award,
-      title: "Experiências Autênticas",
+      title: "Cultura e Tradição",
       description: "Conexão genuína com a natureza e comunidades locais, longe do turismo convencional.",
     },
   ];
@@ -80,10 +80,11 @@ export default function Home() {
     { item: "HOSPEDAGEM", included: true },
     { item: "REFEIÇÕES: CAFÉ DA MANHÃ, ALMOÇO E JANTAR", included: true },
     { item: "AUXÍLIO NAS FOTOGRAFIAS", included: true },
-    { item: "SEGURO VIAGEM", included: true },
     { item: "FLEXIBILIDADE NA OPERAÇÃO DA EXPEDIÇÃO", included: true },
     { item: "INTERAÇÃO COM AS COMUNIDADES TRADICIONAIS", included: true },
     { item: "CERTIFICAÇÃO CADASTUR E LICENÇAS AMBIENTAIS PARA OPERAÇÃO", included: true },
+    { item: "CONDUTORES CREDENCIADOS", included: true },
+    { item: "EXPERIÊNCIA ASTRONÔMICA", included: true },
   ];
 
   const exclusions = [
@@ -91,6 +92,7 @@ export default function Home() {
     { item: "DESPESAS PESSOAIS", included: false },
     { item: "BEBIDAS ALCOÓLICAS", included: false },
     { item: "HOSPEDAGEM PRÉ E PÓS RETIRO", included: false },
+    { item: "SEGURO VIAGEM", included: false },
   ];
 
   return (
@@ -112,7 +114,7 @@ export default function Home() {
             <Link href="/galeria" className="text-sm hover:text-primary transition-colors">Galeria</Link>
             <a href="#contato" className="text-sm hover:text-primary transition-colors">Contato</a>
           </div>
-          <a href="https://wa.me/5511926493672?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20as%20expedições." target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/5563992591113?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20as%20expedi%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer">
             <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
               Fale conosco
             </Button>
@@ -133,10 +135,10 @@ export default function Home() {
                 Viva o Jalapão e as Serras Gerais
               </h1>
               <p className="hero-paragraph text-lg text-foreground/80 mb-4">
-                O Jalapão e a Serra Gerais são destinos que encantam pela beleza natural e pela diversidade de paisagens presentes no coração do cerrado brasileiro. Com rios de águas cristalinas, cachoeiras exuberantes, dunas douradas e formações rochosas impressionantes, a região proporciona experiências únicas para quem busca aventura, tranquilidade e conexão com a natureza.
+                O Jalapão e as Serras Gerais são destinos que encantam pela beleza natural e pela diversidade de paisagens presentes no coração do cerrado brasileiro. Com rios de águas cristalinas, cachoeiras exuberantes, dunas douradas e formações rochosas impressionantes, a região proporciona experiências únicas para quem busca aventura, tranquilidade e conexão com a natureza.
               </p>
               <p className="hero-paragraph text-lg text-foreground/80 mb-8">
-                Além das paisagens inesquecíveis, o Jalapão e a Serra Gerais oferecem uma rica cultura regional, hospitalidade acolhedora e cenários preservados que transformam cada viagem em uma experiência memorável. Seja explorando trilhas, conhecendo os famosos fervedouros ou admirando os cânions e serras da região, cada momento revela a grandiosidade e a autenticidade de um dos lugares mais fascinantes do Brasil.
+                Além das paisagens inesquecíveis, o Jalapão e as Serras Gerais oferecem uma rica cultura regional, hospitalidade acolhedora e cenários preservados que transformam cada viagem em uma experiência memorável. Seja explorando trilhas, conhecendo os famosos fervedouros ou admirando os cânions e serras da região, cada momento revela a grandiosidade e a autenticidade de um dos lugares mais fascinantes do Brasil.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/saber-mais" className="w-full sm:w-auto">
@@ -156,7 +158,7 @@ export default function Home() {
           {/* Image - Right Side */}
           <div className="relative hidden md:block overflow-hidden rounded-[2rem] shadow-2xl shadow-slate-900/10 animate-zoom-slow">
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310419663031129525/h4DPhbXPd2Ncci9CABm58V/jalapao-fervedouros-ehrkeM5rfwNDrpLFoCVwnG.webp"
+              src="/Galeria/img05.jpeg"
               alt="Jalapão - Fervedouros"
               className="w-full h-full object-cover"
             />
@@ -258,7 +260,7 @@ export default function Home() {
               O Que Oferecemos
             </h2>
             <p className="text-lg text-foreground/60 max-w-2xl mb-6">
-              Serviços especializados em atividades de aventura e natureza, com foco em segurança, autenticidade e experiências inesquecíveis.
+              Expedições que vão além do turismo: trekking, aventura, fotografia, observação de aves, ciência e história conectados a experiências autênticas e seguras, que valorizam a biodiversidade, a preservação da natureza, as culturas e as comunidades locais.
             </p>
           </div>
 
@@ -294,7 +296,7 @@ export default function Home() {
           <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
             Entre em contato conosco para consultar sobre expedições personalizadas, datas disponíveis e valores especiais para Jalapão e Serras Gerais.
           </p>
-          <a href="https://wa.me/5511926493672?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20as%20expedi%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/5563992591113?text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20as%20expedi%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer">
             <Button size="lg" className="bg-primary-foreground hover:bg-primary-foreground/90 text-primary gap-2">
               Fale conosco <ArrowRight className="w-4 h-4" />
             </Button>
@@ -325,8 +327,8 @@ export default function Home() {
                 <Phone className="w-8 h-8 text-primary" />
               </div>
               <h3 className="text-lg font-semibold font-heading mb-2">Telefone</h3>
-              <a href="tel:+5511926493672" className="text-foreground/60 hover:text-primary transition-colors">
-                (11) 92649-3672
+              <a href="tel:+5563992591113" className="text-foreground/60 hover:text-primary transition-colors">
+                +55 (63) 99259-1113
               </a>
             </div>
 

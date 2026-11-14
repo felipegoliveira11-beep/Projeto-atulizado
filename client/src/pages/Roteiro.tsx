@@ -68,7 +68,11 @@ export default function Roteiro() {
                 </div>
                 <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-green-100 hover:shadow-md transition-all">
                   <Check className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" strokeWidth={3} />
-                  <p className="text-foreground font-medium font-display">Seguro viagem</p>
+                  <p className="text-foreground font-medium font-display">Condutores credenciados</p>
+                </div>
+                <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-green-100 hover:shadow-md transition-all">
+                  <Check className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" strokeWidth={3} />
+                  <p className="text-foreground font-medium font-display">Experiência astronômica</p>
                 </div>
               </div>
             </div>
@@ -96,6 +100,10 @@ export default function Roteiro() {
                 <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-red-100 hover:shadow-md transition-all">
                   <X className="w-5 h-5 text-red-600 mt-1 flex-shrink-0" strokeWidth={3} />
                   <p className="text-foreground font-medium font-display">Hospedagem pré e pós-retiro</p>
+                </div>
+                <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-red-100 hover:shadow-md transition-all">
+                  <X className="w-5 h-5 text-red-600 mt-1 flex-shrink-0" strokeWidth={3} />
+                  <p className="text-foreground font-medium font-display">Seguro viagem</p>
                 </div>
               </div>
             </div>

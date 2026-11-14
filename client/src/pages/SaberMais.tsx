@@ -24,7 +24,7 @@ export default function SaberMais() {
           </h1>
           <h2 className="text-3xl font-semibold mb-4">Quem Somos</h2>
           <p className="text-lg text-foreground/80 leading-relaxed">
-            A RAIZ VIVA EXPEDIÇÕES nasceu da conexão verdadeira com o Cerrado, suas águas cristalinas, paisagens vivas, cultura e tradições. Mais do que viagens, oferecemos roteiros autênticos que unem aventura, conforto e pertencimento.
+            A RAIZ VIVA EXPEDIÇÕES nasceu da conexão verdadeira com o Cerrado, suas águas cristalinas, paisagens vivas, cultura e tradições. Mais do que viagens, oferecemos experiências autênticas que unem aventura, conforto e pertencimento.
           </p>
           <p className="text-lg text-foreground/80 leading-relaxed mt-6">
             Nossos roteiros são pensados para quem busca imersão na natureza, respeito às comunidades locais e experiências que transformam. A cada jornada, procuramos criar memórias duradouras com segurança, cuidado e muita emoção.
